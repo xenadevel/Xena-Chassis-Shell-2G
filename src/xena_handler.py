@@ -14,14 +14,14 @@ class XenaHandler(object):
 
         self.logger = logger
         self.address = context.resource.address
+        port = context.resource.attributes['Xena Chassis Shell 2G.Controller TCP Port']
+        if not port:
+            port = 22611
         encripted_password = context.resource.attributes['Xena Chassis Shell 2G.Password']
-        if encripted_password:
-            password = CloudShellSessionContext(context).get_api().DecryptPassword(encripted_password).Value
-        else:
-            password = 'xena'
+        password = CloudShellSessionContext(context).get_api().DecryptPassword(encripted_password).Value
 
         self.xm = init_xena(self.logger, 'quali-shell')
-        self.xm.session.add_chassis(self.address, password)
+        self.xm.session.add_chassis(self.address, int(port), password)
 
     def get_inventory(self, context):
         """ Return device structure with all standard attributes

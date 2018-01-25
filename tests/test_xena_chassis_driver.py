@@ -14,17 +14,17 @@ from shellfoundry.releasetools.test_helper import create_autoload_context_2g
 from driver import XenaChassisDriver
 
 address = '176.22.65.114'
+port = '22611'
 password = 'h8XUgX3gyjY0vKMg0wQxKg=='
-password = ''
 
 
 class TestXenaChassisDriver(unittest.TestCase):
 
     def setUp(self):
-        self.context = create_autoload_context_2g(model='Xena Chassis Shell 2G', address=address, password=password)
+        self.context = create_autoload_context_2g(model='Xena Chassis Shell 2G', address=address, port=port,
+                                                  password=password)
         self.driver = XenaChassisDriver()
         self.driver.initialize(self.context)
-        print self.driver.logger.handlers[0].baseFilename
         self.driver.logger.addHandler(logging.StreamHandler(sys.stdout))
 
     def tearDown(self):
