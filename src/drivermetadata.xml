@@ -1,4 +1,4 @@
-<Driver Description="Xena Chassis Driver" MainClass="driver.XenaChassisDriver" Name="Xena Chassis Driver" Version="1.2.7">
+<Driver Description="Xena Chassis Driver" MainClass="driver.XenaChassisDriver" Name="Xena Chassis Driver" Version="2.0.0">
     <Layout>
         <Command Description="Import device into Cloudshell" DisplayName="Autoload" Name="get_inventory" Tags="">
         </Command>

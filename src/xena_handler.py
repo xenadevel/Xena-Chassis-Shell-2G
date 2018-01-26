@@ -16,7 +16,7 @@ class XenaHandler(object):
         self.address = context.resource.address
         port = context.resource.attributes['Xena Chassis Shell 2G.Controller TCP Port']
         if not port:
-            port = 22611
+            port = '22611'
         encripted_password = context.resource.attributes['Xena Chassis Shell 2G.Password']
         password = CloudShellSessionContext(context).get_api().DecryptPassword(encripted_password).Value
 
