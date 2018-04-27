@@ -20,7 +20,7 @@ class XenaHandler(object):
         encripted_password = context.resource.attributes['Xena Chassis Shell 2G.Password']
         password = CloudShellSessionContext(context).get_api().DecryptPassword(encripted_password).Value
 
-        self.xm = init_xena(self.logger, 'quali-shell')
+        self.xm = init_xena(self.logger, 'quali-cs')
         self.xm.session.add_chassis(self.address, int(port), password)
 
     def get_inventory(self, context):

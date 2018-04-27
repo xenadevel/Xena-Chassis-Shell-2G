@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Tests for `TestCenterChassisDriver`
+Tests for `XenaChassisDriver`
 """
 
 import sys
