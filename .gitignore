@@ -67,3 +67,5 @@ cloudshell_config.yml
 deployment/
 
 *.pdf
+
+venv*
